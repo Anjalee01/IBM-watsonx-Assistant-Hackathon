@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servonix</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: #333;
+            background-color: #f4f6f8;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo Styling */
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 3px;
+            font-style: italic;
+            background: linear-gradient(90deg, #3498db 0%, #e74c3c 50%, #f1c40f 100%);
+            -webkit-background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: #ecf0f1;
+        }
+
+        .cta-button {
+            padding: 0.5rem 1rem;
+            background-color: #2980b9;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #1f618d;
+        }
+
+        .hero-section {
+            background-color: #ecf0f1;
+            text-align: center;
+            padding: 4rem 2rem;
+        }
+
+        .hero-section h1 {
+            font-size: 2.5rem;
+            color: #2c3e50;
+        }
+
+        .hero-section p {
+            margin-top: 1rem;
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            font-style: italic;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 3rem 2rem;
+            background-color: white;
+            text-align: center;
+        }
+
+        .features-section h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background-color: #f9fbfc;
+            border: 1px solid #e5e9ec;
+            border-radius: 6px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-card h3 {
+            font-size: 1.6rem;
+            color: #2980b9;
+        }
+
+        .feature-card p {
+            margin: 1rem 0;
+            color: #7f8c8d;
+        }
+
+        .feature-card button {
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background-color: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .feature-card button:hover {
+            background-color: #229954;
+        }
+
+        /* Chat Section */
+        .chat-section {
+            background-color: #ecf0f1;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        .chat-section h2 {
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+
+        .chat-now-btn {
+            padding: 0.75rem 1.5rem;
+            background-color: #2980b9;
+            color: white;
+            font-size: 1.2rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-now-btn:hover {
+            background-color: #1f618d;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">Servonix</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#features">Features</a></li>
+            </ul>
+            <a href="#chat" class="cta-button">Try the Assistant Now</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <main>
+        <section id="home" class="hero-section">
+            <h1>Your Virtual Assistant for Hassle-Free Order Management</h1>
+            <p>Track, modify, or manage your orders with ease, powered by AI.</p>
+        </section>
+
+        <!-- Features Section -->
+        <section id="features" class="features-section">
+            <h2>Core Features</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Order Tracking</h3>
+                    <p>Get real-time updates on your order status.</p>
+                    <button class="track-order-btn">Track Orders</button>
+                </div>
+                <div class="feature-card">
+                    <h3>Order Modification</h3>
+                    <p>Update shipping details or modify your order if possible.</p>
+                    <button class="modify-order-btn">Modify Orders</button>
+                </div>
+                <div class="feature-card">
+                    <h3>Add/Remove Items</h3>
+                    <p>Easily add or remove items from your order before it's finalized.</p>
+                    <button class="update-items-btn">Update Items</button>
+                </div>
+                <div class="feature-card">
+                    <h3>Error Handling & Support</h3>
+                    <p>Resolve order-related issues or escalate to support.</p>
+                    <button class="error-handling-btn">Contact Support</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Chat Section -->
+        <section id="chat" class="chat-section">
+            <h2>Need Assistance?</h2>
+            <p>Click the button below to start chatting with your AI Assistant.</p>
+            <button class="chat-now-btn" onclick="startWatsonAssistant()">Chat Now</button>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Servonix | Privacy Policy</p>
+        <p>Email: support@example.com</p>
+    </footer>
+
+    <!-- IBM Watson Assistant Integration -->
+    <script>
+        function startWatsonAssistant() {
+            window.watsonAssistantChatOptions = {
+                integrationID: "aae3f0d4-34ee-40b7-9378-9ca89378f920",
+                region: "us-south",
+                serviceInstanceID: "c0d77a1c-4700-4d2e-9f6c-2addcab05980",
+                onLoad: async (instance) => { await instance.render(); }
+            };
+            setTimeout(function () {
+                const t = document.createElement('script');
+                t.src = "https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + 
+                        (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+                document.head.appendChild(t);
+            });
+        }
+    </script>
+</body>
+
+</html>
