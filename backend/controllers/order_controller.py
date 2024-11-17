@@ -3,6 +3,8 @@ from models.order import Order
 from models.user import User, db
 from services.order_service import OrderService
 
+order_bp = Blueprint('order', __name__)
+
 @order_bp.route('/api/orders/', methods=['GET'])
 def get_orders():
     """Retrieve all orders or orders for a specific user."""
@@ -18,9 +20,6 @@ def create_order():
     return jsonify(new_order.to_dict()), 201
 
 # Similar changes can be made for update_order and delete_order endpoints.
-
-
-order_bp = Blueprint('order', __name__)
 
 @order_bp.route('/api/orders/', methods=['GET'])
 def get_orders():
