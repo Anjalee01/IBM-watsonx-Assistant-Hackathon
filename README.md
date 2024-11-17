@@ -10,7 +10,7 @@ Servonix is an AI-powered assistant designed to streamline order management for 
 ## **Project Overview**
 
 ### **Frontend**
-- **Technology:** HTML, CSS, and TailwindCSS.
+- **Technology:** HTML, CSS, TailwindCSS and JavaScript.
 - **Purpose:** Provides a modern and responsive landing page where the IBM watsonx Assistant is embedded to handle customer queries.
 - **Deployment:** Hosted on **Vercel** for fast and scalable access.
 
@@ -61,13 +61,222 @@ Servonix is an AI-powered assistant designed to streamline order management for 
 
 ### **Backend**
 
-1. Open the backend folder:
-    ```bash
-    cd servonix/backend
-    ```
-2. Run on Replit:
-    - Log in to Replit.
-    - Import the backend project and run the Python server.
+🚀 Servonix Backend Setup Guide
+
+Welcome to the Servonix Backend! This guide will walk you through setting up and running the backend services for the Servonix Virtual Assistant for hassle-free order management. Follow these detailed steps to get started.
+
+
+---
+
+🛠️ Requirements
+
+Before proceeding, ensure you have the following installed on your system:
+
+1. Python 3.9 or later
+Download Python from the official website: Python Downloads.
+
+
+2. pip (Python package manager)
+Comes bundled with Python. Verify installation:
+
+pip --version
+
+
+3. Flask
+A lightweight Python web framework.
+Installation is covered in the setup steps below.
+
+
+4. Git
+For cloning the project repository.
+Install Git: Git Downloads.
+
+
+5. Postman (Optional)
+For testing API endpoints easily.
+Download here: Postman Downloads.
+
+
+
+
+---
+
+📂 Project Structure
+
+Here’s an overview of the backend file structure:
+
+servonix-backend/
+├── app.py                   # Main entry point of the backend
+├── requirements.txt         # List of dependencies
+├── models/                  # Data models (e.g., User, Order)
+│   ├── user.py
+│   └── order.py
+├── controllers/             # API logic controllers
+│   ├── user_controller.py
+│   └── order_controller.py
+└── services/                # Business logic services
+    ├── user_service.py
+    └── order_service.py
+
+
+---
+
+⚙️ Setup Instructions
+
+1️⃣ Clone the Repository
+
+First, clone the Servonix repository from GitHub to your local machine:
+
+git clone https://github.com/your-username/servonix-backend.git
+cd servonix-backend
+
+2️⃣ Install Dependencies
+
+Install the required Python packages using pip:
+
+pip install -r requirements.txt
+
+3️⃣ Run the Server
+
+Start the Flask server by running the following command:
+
+python app.py
+
+This will launch the backend server at http://127.0.0.1:5000.
+
+
+---
+
+🧩 Configuration
+
+🔑 Watson Assistant Integration
+
+To use IBM Watson Assistant, register for a free IBM Cloud account and set up a Watson Assistant instance:
+🔗 IBM Cloud Watson Assistant
+
+Once set up, note down the following values:
+
+Integration ID
+
+Service Instance ID
+
+Region
+
+
+
+Add this information to the frontend index.html in the Watson Assistant script:
+
+window.watsonAssistantChatOptions = {
+    integrationID: "<YOUR_INTEGRATION_ID>",
+    region: "<YOUR_REGION>",
+    serviceInstanceID: "<YOUR_INSTANCE_ID>",
+    onLoad: async (instance) => { await instance.render(); }
+};
+
+🛢️ Database
+
+Currently, this project uses a mock database for demonstration purposes. If you want to integrate a real database:
+
+1. SQLite: Easy to set up for local use.
+Installation guide: SQLite Downloads
+
+
+2. PostgreSQL: Recommended for production.
+Get started: PostgreSQL Downloads
+
+
+
+Update the services and models to connect with your chosen database.
+
+
+---
+
+📬 Testing the API
+
+Using Postman
+
+1. Import your API endpoints into Postman for easy testing: Postman Docs.
+
+
+2. Test example endpoints:
+
+GET /users: Retrieve all users.
+
+POST /orders: Create a new order.
+
+
+
+
+Example request for creating an order:
+
+POST /orders
+{
+    "item": "Smartphone",
+    "user_id": 101
+}
+
+Using Curl (Optional)
+
+Test endpoints directly from the terminal:
+
+curl -X GET http://127.0.0.1:5000/orders
+
+
+---
+
+🌐 Deployment
+
+To deploy the backend to production, use one of the following services:
+
+🖥️ Heroku
+
+A free hosting platform for small projects.
+Sign up and follow the deployment steps: Heroku Sign Up.
+
+☁️ AWS
+
+Amazon Web Services for scalable production deployments.
+Get started: AWS Free Tier.
+
+🧑‍💻 Docker
+
+Containerize the app for consistent deployment across environments.
+Learn more: Docker Documentation.
+
+
+---
+
+📘 API Documentation
+
+For detailed documentation of all endpoints, refer to the README.md in the docs/ folder or use tools like Swagger to generate documentation.
+
+
+---
+
+1. Fork the repository.
+
+
+2. Create a feature branch:
+
+git checkout -b feature-name
+
+
+3. Submit a pull request.
+
+
+
+
+---
+
+🔗 Resources
+
+IBM Watson Assistant Documentation
+
+Flask Framework Documentation
+
+Postman API Tool
+
+Python Official Website
 
 
 ---
@@ -110,88 +319,15 @@ Servonix is an AI-powered assistant designed to streamline order management for 
 ## **Contributors**
 
 - [Anjalee Ramwani] - Team Lead, Frontend Developer
-- [Your Name] - Backend Integration
+- [Mouafo kamgno keryan gift] - Backend Integration
 - [guxal] - AI Assistant Configuration
 
 ---
 
-## **License**
-
-This project is licensed under the MIT License.
-
-
-# Servonix
-
-**Servonix** is a comprehensive order and user management system designed to streamline operations for businesses. Leveraging modern web technologies, this application provides an intuitive interface for managing user accounts and processing orders efficiently. With features like JWT authentication and a robust database architecture, Servonix ensures a seamless experience for both users and administrators.
-
-✨ **Features**
-- **User Management**: Create, update, and delete user accounts with ease. Ensure secure authentication using JWT for user sessions.
-- **Order Management**: Efficiently manage orders, including creation, updating, retrieval, and deletion of order records.
-- **Database Integration**: Utilizes SQLAlchemy for smooth interaction with relational databases, enabling robust data storage and retrieval.
-- **API Endpoints**: RESTful API endpoints for user and order management, allowing for easy integration with front-end applications.
-- **Responsive Design**: Designed to adapt to various screen sizes, ensuring usability across devices.
-
-🛠️ **How It Works**
-- **User Registration & Authentication**: Users can register and authenticate securely, allowing access to their profiles and order history.
-- **Order Processing**: Users can place new orders and track their status through a user-friendly dashboard.
-- **Data Persistence**: All user and order data is stored securely in a relational database, ensuring data integrity and retrieval efficiency.
-
-📋 **Prerequisites**
-- Python 3.8 or higher installed on your system.
-- A relational database (e.g., PostgreSQL, MySQL, SQLite) set up for data storage.
-
-🔧 **Installation**
-Follow these steps to set up the Servonix project:
-
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/YourUsername/Servonix.git
-   cd Servonix
-   ```
-
-2. **Create a Virtual Environment** (recommended):
-   ```bash
-   python -m venv venv
-   ```
-
-3. **Activate the Virtual Environment**:
-   - **On Windows**:
-     ```bash
-     venv\Scripts\activate
-     ```
-   - **On macOS and Linux**:
-     ```bash
-     source venv/bin/activate
-     ```
-
-4. **Install Required Libraries**:
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-5. **Set Up the Database**:
-   - Update your database connection settings in the application configuration.
-   - Run database migrations (if using Flask-Migrate).
-
-6. **Run the Application**:
-   ```bash
-   python app.py
-   ```
-
-🤝 **Contributing**
-Contributions are welcome! Whether it's improving documentation, suggesting new features, or fixing bugs, your input is valuable.
-- Fork the repository.
-- Create your feature branch (e.g., `git checkout -b feature/YourFeature`).
-- Commit your changes (e.g., `git commit -m 'Add some feature'`).
-- Push to the branch (e.g., `git push origin feature/YourFeature`).
-- Open a pull request.
-
-📝 **Conclusion**
-Servonix is a powerful tool for businesses looking to enhance their order and user management processes. By providing a clean and efficient interface, it empowers users to manage their interactions seamlessly while maintaining a high level of security and data integrity.
-
-📜 **License**
-This project is licensed under the MIT License. See the LICENSE file for details.
-
 ---
 
-Feel free to modify any sections to better fit the specific functionalities or goals of the Servonix project!
+🎉 Thank You for Using Servonix!
+
+For any issues or questions, feel free to open an issue in the repository or contact us directly. Let’s simplify order management together! 😊
+
+
