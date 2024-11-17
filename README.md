@@ -109,7 +109,7 @@ Servonix is an AI-powered assistant designed to streamline order management for 
 
 ## **Contributors**
 
-- [Your Name] - Full-Stack Development
+- [Anjalee Ramwani] - Team Lead, Frontend Developer
 - [Your Name] - Backend Integration
 - [guxal] - AI Assistant Configuration
 
