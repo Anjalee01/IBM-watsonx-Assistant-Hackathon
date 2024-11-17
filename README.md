@@ -107,6 +107,7 @@ Here’s an overview of the backend file structure:
 ```text
 backend/
 ├── app.py                   # Main entry point of the backend
+├── setup.py
 ├── requirements.txt         # List of dependencies
 ├── models/                  # Data models (e.g., User, Order)
 │   ├── user.py
@@ -140,7 +141,7 @@ pip install -r requirements.txt
 
 Start the Flask server by running the following command:
 ```python
-python app.py
+python setup.py
 ```
 This will launch the backend server at http://127.0.0.1:5000.
 
