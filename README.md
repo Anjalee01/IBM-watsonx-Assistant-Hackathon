@@ -78,9 +78,9 @@ Download Python from the official website: Python Downloads.
 
 2. pip (Python package manager)
 Comes bundled with Python. Verify installation:
-
+```bash
 pip --version
-
+```
 
 3. Flask
 A lightweight Python web framework.
@@ -105,7 +105,7 @@ Download here: Postman Downloads.
 
 Here’s an overview of the backend file structure:
 ```text
-servonix-backend/
+backend/
 ├── app.py                   # Main entry point of the backend
 ├── requirements.txt         # List of dependencies
 ├── models/                  # Data models (e.g., User, Order)
@@ -126,10 +126,10 @@ servonix-backend/
 1️⃣ Clone the Repository
 
 First, clone the Servonix repository from GitHub to your local machine:
-
-git clone https://github.com/your-username/servonix-backend.git
-cd servonix-backend
-
+```bash
+git clone https://github.com/Anjalee01/IBM-watsonx-Assistant-Hackathon/blob/main/README.md
+cd backend
+```
 2️⃣ Install Dependencies
 
 Install the required Python packages using pip:
