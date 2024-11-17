@@ -5,14 +5,13 @@ from models.user import User  # Ensure User model is also imported
 from controllers.order_controller import order_bp
 from controllers.user_controller import user_bp
 
-app.register_blueprint(user_bp)
-
-app.register_blueprint(order_bp)
-
 import logging
 
 app = Flask(__name__)
 CORS(app)  # Enable CORS for all routes
+app.register_blueprint(user_bp)
+
+app.register_blueprint(order_bp)
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
