@@ -104,7 +104,7 @@ Download here: Postman Downloads.
 📂 Project Structure
 
 Here’s an overview of the backend file structure:
-
+```text
 servonix-backend/
 ├── app.py                   # Main entry point of the backend
 ├── requirements.txt         # List of dependencies
@@ -117,7 +117,7 @@ servonix-backend/
 └── services/                # Business logic services
     ├── user_service.py
     └── order_service.py
-
+```
 
 ---
 
@@ -139,9 +139,9 @@ pip install -r requirements.txt
 3️⃣ Run the Server
 
 Start the Flask server by running the following command:
-
+```python
 python app.py
-
+```
 This will launch the backend server at http://127.0.0.1:5000.
 
 
@@ -165,14 +165,14 @@ Region
 
 
 Add this information to the frontend index.html in the Watson Assistant script:
-
+```javascript
 window.watsonAssistantChatOptions = {
     integrationID: "<YOUR_INTEGRATION_ID>",
     region: "<YOUR_REGION>",
     serviceInstanceID: "<YOUR_INSTANCE_ID>",
     onLoad: async (instance) => { await instance.render(); }
 };
-
+```
 🛢️ Database
 
 Currently, this project uses a mock database for demonstration purposes. If you want to integrate a real database:
@@ -208,13 +208,13 @@ POST /orders: Create a new order.
 
 
 Example request for creating an order:
-
+```javascript
 POST /orders
 {
     "item": "Smartphone",
     "user_id": 101
 }
-
+```
 Using Curl (Optional)
 
 Test endpoints directly from the terminal:
