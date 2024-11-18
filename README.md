@@ -287,8 +287,12 @@ Python Official Website
 1. Configure your Assistant:
     - Log in to the IBM watsonx Assistant Console.
     - Create a new assistant and configure it to connect to the backend endpoints.
-2. Embed the assistant widget:
 
+2. import the chatbot to whatsonx assistant:
+    - Click on the import button on the top right corner of the assistant console.
+    - Select the JSON file from the repository and import it.
+
+3. Embed the assistant widget:
     - Copy the generated embed code from the watsonx Assistant console.
     - Paste it into the frontend HTML.
 
